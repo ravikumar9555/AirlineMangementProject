@@ -1,17 +1,17 @@
 # ✈️ Airline Booking System (Microservices Based – Backend)
 
-A backend-only **Airline Booking System** built using **Node.js, Express, MySQL, and Sequelize** following **Microservices Architecture**.
+A production-ready **Airline Booking System Backend** built using  
+**Node.js, Express, MySQL, Sequelize, RabbitMQ, and JWT** following **Microservices Architecture**.
 
-This project provides RESTful APIs for searching, managing, and booking flights.  
-It is designed to be consumed by any frontend (Web / Mobile).
+This system provides secure, scalable REST APIs for flight booking platforms.
 
-Built with focus on **scalability, security, and clean architecture**.
+Designed for **high availability, security, and performance**.
 
 ---
 
 ## 🌐 Architecture Overview
 
-This system is divided into multiple independent microservices:
+This project follows a distributed microservices architecture:
 
 | Service | Description | Repository |
 |---------|-------------|------------|
@@ -160,12 +160,6 @@ Each service contains:
 
 ---
 
-## ⚙️ Installation & Setup
 
-### 1️⃣ Clone Repositories
 
-```bash
-git clone https://github.com/your-username/auth-service
-git clone https://github.com/your-username/flight-service
-git clone https://github.com/your-username/airport-service
-git clone https://github.com/your-username/booking-service
+
