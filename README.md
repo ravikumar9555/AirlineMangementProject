@@ -1,84 +1,173 @@
-# ✈️ Airline Booking System
+# ✈️ Airline Booking System (Microservices Based – Backend)
 
-A full-stack Airline Booking System built using **React, Node.js, Express, MySQL, and Sequelize**.  
-This application allows users to search and book flights, while admins can manage flights, airports, airplanes, cities, and users.
+A backend-only **Airline Booking System** built using **Node.js, Express, MySQL, and Sequelize** following **Microservices Architecture**.
 
-This project demonstrates **secure authentication, role-based access, advanced filtering, and scalable backend architecture**.
+This project provides RESTful APIs for searching, managing, and booking flights.  
+It is designed to be consumed by any frontend (Web / Mobile).
+
+Built with focus on **scalability, security, and clean architecture**.
 
 ---
 
-## 📌 Features
+## 🌐 Architecture Overview
+
+This system is divided into multiple independent microservices:
+
+| Service | Description | Repository |
+|---------|-------------|------------|
+| Auth Service | Authentication & JWT | [[[[[https://github.com/your-username/auth-service](https://github.com/ravikumar9555/AUTHSERVICE)](https://github.com/ravikumar9555/AUTHSERVICE.git)]](https://github.com/ravikumar9555/AUTHSERVICE.git)(https://github.com/ravikumar9555/AUTHSERVICE.git)](https://github.com/ravikumar9555/AUTHSERVICE) |
+| Flight Service | Flight Search & Management |[ https://github.com/your-username/flight-service](https://github.com/ravikumar9555/FLIGHTSANDSERACHSERVICE) |
+| Booking Service | Booking Management | [https://github.com/your-username/booking-service](https://github.com/ravikumar9555/BOOKINGSERVICE) |
+
+> ⚠️ Replace links with your real GitHub repositories.
+
+---
+
+## 📌 Key Features
 
 ### 🔐 Authentication
-- JWT-based login and registration
-- Secure session handling
+- JWT-based login & registration
+- Token validation on every request
 - Auto logout on token expiry
 - Role-based access (ADMIN / CUSTOMER)
 
 ---
 
-### 👤 Customer Features
-- Search flights by:
-  - From City
-  - To City
-  - Travel Date
-  - Passenger Count
-  - Price Range
-- View flight details
-- Book flights
-- Responsive UI
+### ✈️ Flight Management
+- Create / Update / Delete flights
+- Search flights with advanced filters
+- Price, date, seat, and route filtering
+- Pagination support
 
 ---
 
-### 🛠️ Admin Features
-- Add / View / Manage Flights
-- Add / View / Manage Airplanes
-- Add / View / Manage Airports
-- Add / View / Manage Cities
-- View Users
-- Pagination for large data
-- Dashboard with sidebar navigation
+### 🏢 Airport & City Management
+- Add / update airports
+- Add / update cities
+- City → Airport mapping
+- Validation and referential integrity
+
+---
+
+### 🛫 Airplane Management
+- Manage airplanes
+- Capacity validation
+- Automatic seat handling
+
+---
+
+### 📦 Booking System
+- Create bookings
+- Seat availability validation
+- Booking history
+- Secure booking flow
 
 ---
 
 ### 🔍 Advanced Search
-- City → Airport mapping
+- City-based search
 - Multi-airport filtering
-- Date-wise filtering
-- Seat availability filtering
+- Date range filtering
+- Seat availability
 - Price range filtering
-- Backend optimized filters
+- Backend optimized Sequelize queries
 
 ---
 
-### 🔐 Security
+### 🔒 Security
 - JWT Authorization
-- Protected Routes
-- Axios Interceptors
-- Token Validation on every request
-- Auto logout on unauthorized access
+- Protected APIs
+- Middleware validation
+- Request sanitization
+- Unauthorized access blocking
 
 ---
 
 ## 🏗️ Tech Stack
-
-### Frontend
-- React (Vite)
-- Tailwind CSS
-- Axios
-- React Router
-- Context API
 
 ### Backend
 - Node.js
 - Express.js
 - Sequelize ORM
 - JWT Authentication
+- REST API
 
 ### Database
-- MySQL (Relational Database)
+- MySQL
 
 ---
 
-## 📂 Project Structure
+## 📂 Microservices Design
 
+Each service contains:
+
+- Independent database models
+- Dedicated API routes
+- Service-specific business logic
+- Separate deployment capability
+
+
+---
+
+## 🗄️ Database Schema
+
+### Users
+| Field | Type |
+|-------|------|
+| id | INT |
+| email | VARCHAR |
+| password | VARCHAR |
+| role | ENUM |
+
+---
+
+### Airplanes
+| Field | Type |
+|-------|------|
+| id | INT |
+| modelNumber | VARCHAR |
+| capacity | INT |
+
+---
+
+### Airports
+| Field | Type |
+|-------|------|
+| id | INT |
+| name | VARCHAR |
+| cityId | INT |
+
+---
+
+### Cities
+| Field | Type |
+|-------|------|
+| id | INT |
+| name | VARCHAR |
+
+---
+
+### Flights
+| Field | Type |
+|-------|------|
+| id | INT |
+| flightNumber | VARCHAR |
+| airplaneId | INT |
+| departureAirportId | INT |
+| arrivalAirportId | INT |
+| departureTime | DATETIME |
+| arrivalTime | DATETIME |
+| price | INT |
+| totalSeats | INT |
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone Repositories
+
+```bash
+git clone https://github.com/your-username/auth-service
+git clone https://github.com/your-username/flight-service
+git clone https://github.com/your-username/airport-service
+git clone https://github.com/your-username/booking-service
