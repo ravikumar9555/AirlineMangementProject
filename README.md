@@ -19,8 +19,6 @@ This system is divided into multiple independent microservices:
 | Flight Service | Flight Search & Management |[ https://github.com/your-username/flight-service](https://github.com/ravikumar9555/FLIGHTSANDSERACHSERVICE) |
 | Booking Service | Booking Management | [https://github.com/your-username/booking-service](https://github.com/ravikumar9555/BOOKINGSERVICE) |
 
-> ⚠️ Replace links with your real GitHub repositories.
-
 ---
 
 ## 📌 Key Features
